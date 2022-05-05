@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="style.css" />
+
+        <title>Frontend Mentor | Tip calculator app</title>
+    </head>
+    <body class="page">
+        <h1 class="title">SPLI</br>TTER</h1>
+        <div class="main">
+            <div class="main__left">
+                <form class="form"action="">
+               <div class="text-container">
+                   <h3 class="text">Bill</h3>
+                   <h3 class="text text--hidden">error</h3>
+                </div>
+                <div class="input-container">
+                    <input id="bill" class="input" type="text" placeholder="0.0" value="" onkeypress="if ( isNaN(this.value + String.fromCharCode(event.keyCode) )) return false;">
+                    <img src="./dollar-sign-solid.svg" alt="dolar_sign">
+                    
+                </div>
+                <h3 class="text text--margin"> Select Tip %</h3> 
+                    <div class="btn-container">
+                        <div class="btn">5%</div>
+                        <div class="btn">10%</div>
+                        <div class="btn btn--active">15%</div>
+                        <div class="btn">25%</div>
+                        <div class="btn">50%</div>
+                        <input class="btn--custom input" type="text" placeholder="Custom" value="" >
+                    </div>
+                <div class="text-container">
+                   <h3 class="text">Number of People</h3>
+                   <h3 id="error" class="text text--hidden ">Can't be zero</h3>
+                </div>
+               <div class="input-container">
+                   <input id="people" class="input" type="text"  placeholder="1" min="1">
+                   <img class="user" src="./user-solid.svg" alt="user_sign">
+                </div>
+            </form>
+            </div>
+            <div class="main__right">
+                <div class="total-container">
+                    <h3 class="total">Tip Amount<br><span class="person">/ person</span></h3>
+                    <h1 id="tip" class="sum">$0</h1>
+                </div>
+                <div class="total-container">
+                    <h3 class="total">Total<br><span class="person">/ person</span></h3>
+                    <h1 id="total" class="sum">$0</h1>
+                </div>
+                <div class="reset">RESET</div>
+            </div>
+        </div>
+        <style>
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+            }
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+        </style>
+        <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by
+            <a href="https://github.com/thomas-matuszewski"
+                >Tomasz Matuszewski</a
+            >.
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>

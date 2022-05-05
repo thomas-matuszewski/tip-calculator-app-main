@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+$strong-cyan: hsl(172, 67%, 45%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$dark-grayish-cyan-2: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$light-grayish-cyan-2: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+$darkRed: darkred;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+}
+
+.page {
+    background: $light-grayish-cyan;
+    @include flex;
+    flex-direction: column;
+    height: 100vh;
+    font-size: 24px;
+}
+.title {
+    color: $very-dark-cyan;
+    margin-bottom: 4rem;
+    font-size: 1.25rem;
+    letter-spacing: 0.5rem;
+}
+
+.main {
+    display: flex;
+    background: $white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 50%;
+    margin-bottom: 2rem;
+}
+.main__left {
+    width: 50%;
+    margin-right: 1.5rem;
+}
+
+.text-container {
+    display: flex;
+    justify-content: space-between;
+}
+.text {
+    color: $dark-grayish-cyan;
+    font-size: 0.9rem;
+    transition: 0.5s;
+    &--margin {
+        margin-bottom: 1rem;
+    }
+    &--hidden {
+        visibility: hidden;
+        color: darkred;
+    }
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+img {
+    position: absolute;
+    width: 3%;
+    left: 0.5em;
+    top: 0.5em;
+    opacity: 0.2;
+}
+
+.user {
+    position: absolute;
+    width: 4%;
+    left: 0.5em;
+    top: 0.5em;
+    opacity: 0.2;
+}
+
+.input {
+    outline: none;
+    background: $light-grayish-cyan-2;
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+    text-align: right;
+    border-radius: 0.25rem;
+    font-weight: 700;
+    color: $dark-grayish-cyan;
+    font-size: 1rem;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button,
+    &[type="number"] {
+        -moz-appearance: textfield;
+        // -webkit-appearance: none;
+        margin: 0;
+    }
+    &--error {
+        border: 2px solid darkred;
+    }
+    &:focus {
+        outline: 2px solid $strong-cyan;
+    }
+}
+
+.btn-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background: $very-dark-cyan;
+    color: $white;
+    font-weight: 700;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.5s;
+    text-align: center;
+
+    &:hover {
+        background: $light-grayish-cyan;
+        color: $very-dark-cyan;
+    }
+    &--active {
+        background: $strong-cyan;
+    }
+    &--custom {
+        background: $light-grayish-cyan-2;
+        color: $very-dark-cyan;
+        text-align: right;
+        cursor: text;
+        width: 100%;
+        border: none;
+        transition: none;
+        &:hover {
+            background: $light-grayish-cyan-2;
+        }
+        &:focus {
+            outline: 2px solid $strong-cyan;
+        }
+        &::placeholder {
+            text-align: center;
+            letter-spacing: 0.1rem;
+            font-weight: 700;
+        }
+    }
+}
+.main__right {
+    width: 50%;
+    height: 100%;
+    background: $very-dark-cyan;
+    padding: 1.5rem 1.5rem;
+    margin-left: 1.5rem;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 25% 50%;
+}
+
+.total-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total {
+    color: $white;
+    font-size: 0.75rem;
+}
+.person {
+    color: $dark-grayish-cyan;
+}
+.sum {
+    color: $strong-cyan;
+    font-size: 2rem;
+}
+
+.reset {
+    width: 100%;
+    padding: 0.5rem;
+    background: $strong-cyan;
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+    color: $very-dark-cyan;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    align-self: end;
+    transition: 0.5s;
+    text-align: center;
+    &:hover {
+        background: $light-grayish-cyan;
+    }
+}
+
+@media (max-width: 384px) {
+    .title {
+        margin-bottom: 3rem;
+    }
+    .main {
+        flex-direction: column;
+        width: 100%;
+    }
+    .main__left {
+        width: 100%;
+    }
+    .main__right {
+        width: 100%;
+        margin: 0;
+    }
+
+    .reset {
+        margin-top: 2rem;
+    }
+}
