@@ -209,7 +209,7 @@ img {
     }
 }
 
-@media (max-width: 384px) {
+@media screen and (max-width: 420px) {
     .title {
         margin: 3rem 0;
     }
@@ -220,6 +220,7 @@ img {
     .main {
         flex-direction: column;
         width: 100%;
+        border-radius: 0;
     }
     .main__left {
         width: 100%;

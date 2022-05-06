@@ -10,8 +10,8 @@ const resetBtn = document.querySelector(".reset");
 let billValue = 0.0;
 let tipValue = 0.15;
 let peopleValue = 1;
-let tipAmount = 0.00;
-let total = 0.00;
+let tipAmount = 0.0;
+let total = 0.0;
 
 function validationPeople(s) {
     var nr = /^[0-9]*$/;
