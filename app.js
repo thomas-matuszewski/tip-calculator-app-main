@@ -10,8 +10,8 @@ const resetBtn = document.querySelector(".reset");
 let billValue = 0.0;
 let tipValue = 0.15;
 let peopleValue = 1;
-let tipAmount = 0;
-let total = 0;
+let tipAmount = 0.00;
+let total = 0.00;
 
 function validationPeople(s) {
     var nr = /^[0-9]*$/;
@@ -91,6 +91,6 @@ resetBtn.addEventListener("click", () => {
     people.value = 1;
     customTip.value = "";
     tipBtn[2].click();
-    tip.innerHTML = "$0";
-    sum.innerHTML = "$0";
+    tip.innerHTML = "$0.00";
+    sum.innerHTML = "$0.00";
 });
